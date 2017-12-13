@@ -1,0 +1,11 @@
+name = "CER Profile2"
+core = "7.x"
+description = "Allows CER to relate user references to Profile2 fields."
+dependencies[] = cer
+dependencies[] = profile2
+
+files[] = profile2.inc
+; Information added by drush on 2016-02-12
+version = "68f4b2043ab1b200da4e21d506924d7cd332b67f"
+project = "cer"
+datestamp = "1455299938"

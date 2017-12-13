@@ -1,0 +1,11 @@
+name = "Field Group Test"
+description = "Test module for Field Group"
+core = "7.x"
+package = Fields
+hidden = TRUE
+
+
+; Information added by drush on 2016-02-28
+version = "0a5404d623d0bec355d81a9646f2b7de93b958e4"
+project = "field_group"
+datestamp = "1456657933"

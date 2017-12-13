@@ -1,0 +1,10 @@
+name = "CER Inline Entity Form"
+core = "7.x"
+description = "Provides an option to hide CER fields on Inline Entity Forms."
+dependencies[] = cer
+dependencies[] = inline_entity_form
+
+; Information added by drush on 2016-02-12
+version = "68f4b2043ab1b200da4e21d506924d7cd332b67f"
+project = "cer"
+datestamp = "1455299938"
