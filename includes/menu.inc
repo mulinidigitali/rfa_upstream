@@ -269,7 +269,7 @@ define('MENU_SITE_ONLINE', 5);
  /**
  * The maximum number of path elements for a menu callback
  */
-define('MENU_MAX_PARTS', 9);
+define('MENU_MAX_PARTS', 10);
 
 
 /**
