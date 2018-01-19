@@ -160,7 +160,10 @@ projects[conditional_fields][version] = 3.0-alpha2
 
 projects[content_menu][version] = 1.0
 
-projects[ctools][version] = 1.12
+projects[ctools][type] = module
+projects[ctools][download][type] = git
+projects[ctools][download][url] = https://git.drupal.org/project/ctools.git
+projects[ctools][download][revision] = 166eac2a2fe6dd678178a96845815526147a736f
 
 projects[date][version] = 2.10
 projects[date][patch][] = https://www.drupal.org/files/issues/date-input_disabled-1190830-14.patch
@@ -540,7 +543,7 @@ projects[xmlsitemap][type] = module
 projects[xmlsitemap][download][type] = git
 projects[xmlsitemap][download][url] = https://git.drupal.org/project/xmlsitemap.git
 projects[xmlsitemap][download][revision] = eaaf1dd750c17ccca9c58cf40d1cda815b77cbb2
-projects[xmlsitemap][patch][] = https://www.drupal.org/files/issues/xmlsitemap-entity-integration-1461670-40.patch
+projects[xmlsitemap][patch][] = https://www.drupal.org/files/issues/xmlsitemap-entity-integration-1461670-41.patch
 
 projects[yoast_seo][type] = module
 projects[yoast_seo][download][type] = git

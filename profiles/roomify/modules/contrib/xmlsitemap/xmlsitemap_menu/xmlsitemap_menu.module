@@ -206,7 +206,7 @@ function xmlsitemap_menu_menu_link_insert(array $link) {
  */
 function xmlsitemap_menu_menu_link_update(array $link) {
   //$link += array('xmlsitemap' => array());
-  //xmlsitemap_menu_xmlsitemap_process_menu_links(array($link['mlid']), array('xmlsitemap' => $link['xmlsitemap']));
+  //xmlsitemap_menu_xmlsitemap_process_menu_links(array($link['mlid']), $link['xmlsitemap']);
 }
 
 /**
