@@ -61,6 +61,12 @@ function pet_rules_action_info() {
 function pet_action_send_pet($pet_name, $to_text, $to_account, $account_subs, $node_subs, $settings, $rules_state) {
   $pet = pet_load($pet_name);
 
+  // Pet not active.
+  if (!$pet->active) {
+    watchdog('pet', 'Don\'t send %name PET because is not active.', array('%name' => $pet_name), WATCHDOG_NOTICE);
+    return;
+  }
+
   // Resolve the recipient
   if (isset($to_account)) {
     $pet_to = $to_account->mail;

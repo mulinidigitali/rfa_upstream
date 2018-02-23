@@ -34,7 +34,7 @@ projects[roomify_rate][subdir] = roomify
 projects[roomify_property][type] = module
 projects[roomify_property][download][type] = git
 projects[roomify_property][download][url] = https://github.com/Roomify/roomify_property.git
-projects[roomify_property][download][tag] = 1.29
+projects[roomify_property][download][tag] = 1.30
 projects[roomify_property][directory_name] = roomify_property
 projects[roomify_property][subdir] = roomify
 
@@ -119,6 +119,8 @@ projects[checklistapi][version] = 1.2
 projects[chosen][version] = 2.0
 
 projects[classy_paragraphs][version] = 1.0
+
+projects[colorbox] = 2.13
 
 projects[commerce][version] = 1.13
 projects[commerce][patch][] = https://www.drupal.org/files/issues/commerce-delete_line_items_without_products-2261289-4.patch
@@ -393,6 +395,7 @@ projects[pet][download][revision] = 3a42221335ecf717a6a538e431394afcd7f198c3
 projects[pet][patch][] = https://www.drupal.org/files/issues/add-rule-state-and-allow-from-override-2879713-1.patch
 projects[pet][patch][] = https://www.drupal.org/files/issues/pet-specify_entity_types_for_tokens-2612754-1.patch
 projects[pet][patch][] = https://www.drupal.org/files/issues/multilanguage-support-2727733-6.patch
+projects[pet][patch][] = patches/pet_active.patch
 
 projects[plupload][version] = 1.7
 ; https://www.drupal.org/node/2106583
@@ -584,6 +587,13 @@ libraries[ckeditor][type] = library
 libraries[ckeditor][destination] = libraries
 libraries[ckeditor][download][type] = get
 libraries[ckeditor][download][url] = https://ckeditor.com/cke4/online-builder/releases/minified/4.7.3/icy_orange/0.9/ckeditor_4.7.3_dc56a7d8be5f.zip
+
+; colorbox
+libraries[colorbox][directory_name] = colorbox
+libraries[colorbox][type] = library
+libraries[colorbox][destination] = libraries
+libraries[colorbox][download][type] = get
+libraries[colorbox][download][url] = https://github.com/jackmoore/colorbox/archive/1.x.zip
 
 ; imagesLoaded for masonry.
 libraries[imagesloaded][directory_name] = imagesloaded

@@ -172,6 +172,13 @@ function pet_form($form, &$form_state, $pet, $op = 'edit') {
   );
   $form['tokens'] = pet_token_help($pet->token_entity_types);
 
+  $form['active'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Active template'),
+    '#default_value' => $pet->active,
+    '#weight' => 100,
+  );
+
   $form['actions'] = array('#type' => 'actions');
   $form['actions']['submit'] = array(
     '#type' => 'submit',
