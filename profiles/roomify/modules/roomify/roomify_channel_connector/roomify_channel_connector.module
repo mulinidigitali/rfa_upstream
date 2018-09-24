@@ -1459,6 +1459,10 @@ function roomify_channel_bookingcom_admin_form_submit(&$form, &$form_state) {
     $k = explode('_', $key);
     if (isset($k[3]) && $k[3] == 'roomid') {
       if ($value != 0) {
+        if ($map->data == '') {
+          $map->data = array();
+        }
+
         $map->data[$k[4]][$k[5]]['roomid'] = $value;
         entity_save('roomify_channel_map', $map);
       }
@@ -1470,6 +1474,10 @@ function roomify_channel_bookingcom_admin_form_submit(&$form, &$form_state) {
     $k = explode('_', $key);
     if (isset($k[3]) && $k[3] == 'standardrate') {
       if ($value != 0) {
+        if ($map->data == '') {
+          $map->data = array();
+        }
+
         $map->data[$k[4]][$k[5]]['standardrate'] = $value;
         entity_save('roomify_channel_map', $map);
         $start_date = new DateTime('now');

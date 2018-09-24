@@ -145,7 +145,7 @@ function bat_event_form_wrapper(BatEvent $event) {
 
   // Set the page title.
   $type = bat_event_get_types($event->type);
-  drupal_set_title(t('#@event_id - @event_type', array('@event_type' => $type->label, '@event_id' => $event->event_id)));
+  drupal_set_title(t('#!event_id - !event_type', array('!event_type' => $type->label, '!event_id' => $event->event_id)));
 
   return drupal_get_form('bat_event_edit_form', $event);
 }
@@ -434,11 +434,8 @@ function bat_event_edit_form_validate(&$form, &$form_state) {
   if ($event_type->fixed_event_states) {
     if ($form_state['values']['bat_start_date'] != '' && $form_state['values']['bat_end_date'] != '' &&
         $form_state['values'][$target_field_name][LANGUAGE_NONE][0]['target_id'] != '') {
-      global $databases;
 
-      $prefix = (isset($databases['default']['default']['prefix'])) ? $databases['default']['default']['prefix'] : '';
-
-      $event_store = new DrupalDBStore($event_type->type, DrupalDBStore::BAT_EVENT, $prefix);
+      $event_store = new DrupalDBStore($event_type->type, DrupalDBStore::BAT_EVENT, bat_get_db_prefix());
 
       $start_date = new DateTime($form_state['values']['bat_start_date']);
       $end_date = new DateTime($form_state['values']['bat_end_date']);
@@ -529,7 +526,8 @@ function bat_event_edit_form_submit(&$form, &$form_state) {
  */
 function bat_event_form_submit_delete($form, &$form_state) {
   if (isset($form_state['ajax'])) {
-    bat_event_delete($form_state['bat_event']);
+    $event = bat_event_load($form_state['bat_event']->event_id, TRUE);
+    bat_event_delete($event);
     drupal_set_message(t('The event has been removed'));
     $form_state['event_deleted'] = TRUE;
   }

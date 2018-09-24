@@ -1293,7 +1293,7 @@ class BatEventController extends EntityAPIController {
   /**
    * {@inheritdoc}
    */
-  public function save($entity) {
+  public function save($entity, DatabaseTransaction $transaction = NULL) {
     // Update start_date_object and end_date_object with the new dates.
     $entity->start_date_object = new DateTime($entity->start_date);
     $entity->end_date_object = new DateTime($entity->end_date);
@@ -1391,9 +1391,7 @@ class BatEventController extends EntityAPIController {
    *   Set to TRUE if the event is to be removed (event_id set to zero).
    */
   public function batStoreSave(Unit $unit, \DateTime $start_date, \DateTime $end_date, $event_type, $granularity, $event_state, $event_id, $remove = FALSE) {
-    global $databases;
-
-    $prefix = (isset($databases['default']['default']['prefix'])) ? $databases['default']['default']['prefix'] : '';
+    $prefix = bat_get_db_prefix();
 
     $state_store = new DrupalDBStore($event_type, DrupalDBStore::BAT_STATE, $prefix);
     $event_store = new DrupalDBStore($event_type, DrupalDBStore::BAT_EVENT, $prefix);
@@ -1417,7 +1415,7 @@ class BatEventController extends EntityAPIController {
   /**
    * @param array $ids
    */
-  public function delete($ids) {
+  public function delete($ids, DatabaseTransaction $transaction = NULL) {
     foreach ($ids as $id) {
       $event = bat_event_load($id);
       $this->deleteEvent($event);
@@ -1502,7 +1500,7 @@ class BatEventTypeController extends EntityAPIControllerExportable {
   /**
    * @param object $entity
    */
-  public function save($entity) {
+  public function save($entity, DatabaseTransaction $transaction = NULL) {
     if (empty($entity->{$this->idKey})) {
       // Create all tables necessary for this Event Type.
       bat_event_create_event_type_schema($entity->type);
@@ -1523,7 +1521,7 @@ class BatEventTypeController extends EntityAPIControllerExportable {
   /**
    * @param array $ids
    */
-  public function delete($ids) {
+  public function delete($ids, DatabaseTransaction $transaction = NULL) {
     parent::delete($ids);
 
     foreach ($ids as $id) {
@@ -1651,7 +1649,7 @@ function bat_event_state_reference_field_data_property_info($name = NULL) {
   return array(
     'state_id' => array(
       'label' => t('State ID'),
-      'type' => 'int',
+      'type' => 'integer',
       'getter callback' => 'entity_property_verbatim_get',
       'setter callback' => 'entity_property_verbatim_set',
     ),
@@ -2394,11 +2392,7 @@ function bat_event_get_matching_units(DateTime $start_date, DateTime $end_date, 
  * @return Roomify\Bat\Calendar\Calendar
  */
 function bat_event_get_calendar($type_id, $event_type) {
-  global $databases;
-
-  $prefix = (isset($databases['default']['default']['prefix'])) ? $databases['default']['default']['prefix'] : '';
-
-  $state_store = new DrupalDBStore($event_type, DrupalDBStore::BAT_STATE, $prefix);
+  $state_store = new DrupalDBStore($event_type, DrupalDBStore::BAT_STATE, bat_get_db_prefix());
 
   $drupal_units = bat_unit_load_multiple(FALSE, array('type_id' => $type_id));
   $bat_units = array();
@@ -2413,7 +2407,7 @@ function bat_event_get_calendar($type_id, $event_type) {
 }
 
 /**
- * Returns matching units based on a provided Calendar. A Calendar can be instantiated in a numder
+ * Returns matching units based on a provided Calendar. A Calendar can be instantiated in a number
  * of ways - bat_event offers bat_event_get_calendar. Using an already setup calendar multiple times
  * reduces overall load.
  *

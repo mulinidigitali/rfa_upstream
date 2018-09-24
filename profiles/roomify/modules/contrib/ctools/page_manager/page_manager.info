@@ -7,7 +7,9 @@ version = CTOOLS_MODULE_VERSION
 
 files[] = tests/head_links.test
 
-; Information added by drush on 2017-08-23
-version = "166eac2a2fe6dd678178a96845815526147a736f"
+; Information added by Drupal.org packaging script on 2018-02-24
+version = "7.x-1.14"
+core = "7.x"
 project = "ctools"
-datestamp = "1503511943"
+datestamp = "1519455788"
+

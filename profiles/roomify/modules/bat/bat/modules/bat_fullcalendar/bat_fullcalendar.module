@@ -372,7 +372,7 @@ function bat_fullcalendar_libraries_info() {
   $libraries['fullcalendar'] = array(
     'name' => 'Full Calendar',
     'vendor url' => 'http://fullcalendar.io',
-    'download url' => 'https://github.com/arshaw/fullcalendar/releases/download/v3.6.1/fullcalendar-3.6.1.zip',
+    'download url' => 'https://github.com/arshaw/fullcalendar/releases/download/v3.9.0/fullcalendar-3.9.0.zip',
     'version arguments' => array(
       'file' => 'fullcalendar.min.js',
       'pattern' => '/v(\d+\.\d+\.\d)/',
@@ -424,7 +424,7 @@ function bat_fullcalendar_libraries_info() {
   $libraries['fullcalendar-scheduler'] = array(
     'name' => 'Fullcalendar Scheduler',
     'vendor url' => 'http://fullcalendar.io',
-    'download url' => 'https://github.com/fullcalendar/fullcalendar-scheduler/releases/download/v1.8.0/fullcalendar-scheduler-1.8.0.zip',
+    'download url' => 'https://github.com/fullcalendar/fullcalendar-scheduler/releases/download/v1.9.4/fullcalendar-scheduler-1.9.4.zip',
     'version arguments' => array(
       'file' => 'scheduler.min.js',
       'pattern' => '/(\d+\.\d+\.\d)/',
@@ -444,7 +444,7 @@ function bat_fullcalendar_libraries_info() {
             'scheduler.min.css',
           ),
         ),
-        'dependencies' => array('fullcalendar (>=3.6.1)'),
+        'dependencies' => array('fullcalendar (>=3.9.0)'),
       ),
       'source' => array(
         'files' => array(
@@ -455,7 +455,7 @@ function bat_fullcalendar_libraries_info() {
             'scheduler.css',
           ),
         ),
-        'dependencies' => array('fullcalendar (>=3.6.1)'),
+        'dependencies' => array('fullcalendar (>=3.9.0)'),
       ),
     ),
   );
@@ -581,8 +581,8 @@ function bat_fullcalendar_configure($user_settings) {
       'viewsTimelineThirtyDayDuration' => array('days' => 30),
       'viewsTimelineThirtyDaySlotDuration' => '01:00',
       'viewsTimelineThirtyDaySlotLabelFormat' => FALSE,
-      'viewsTimeline365DayButtonText' => '1 year',
       'viewsTimelineThirtyDayTitleFormat' => '',
+      'viewsTimeline365DayButtonText' => '1 year',
       'viewsTimeline365DayDuration' => array('days' => 365),
       'viewsTimeline365DaySlotLabelFormat' => FALSE,
       'viewsTimeline365DayTitleFormat' => '',
@@ -648,6 +648,10 @@ function bat_fullcalendar_set_js_files($user_js_files = array()) {
     $js_files = array(
       drupal_get_path('module', 'bat_fullcalendar') . '/js/bat_fullcalendar_timeline.js'
     );
+
+    if (module_exists('qtip_library')) {
+      libraries_load('qtip');
+    }
   }
 
   // Provide alter hook to change calendar js files.

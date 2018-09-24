@@ -134,7 +134,6 @@ body .back-to-site-link a {
   border: 2px solid whitesmoke;
   border-radius: 8px;
   margin-bottom: 40px;
-  display: none !important;
 }
 body.better-messages-popup #console.roomify-admin-messages {
   padding: 0;

@@ -29,8 +29,3 @@ files[] = includes/fields/taxonomy_term_reference.inc
 files[] = includes/fields/user_reference.inc
 
 files[] = tests/CerBasicTestCase.test
-
-; Information added by drush on 2016-02-12
-version = "68f4b2043ab1b200da4e21d506924d7cd332b67f"
-project = "cer"
-datestamp = "1455299938"

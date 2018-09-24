@@ -232,7 +232,7 @@ class RoomifyChannelMapController extends EntityAPIController {
     $values += array(
       'channel_map_id' => '',
       'is_new' => TRUE,
-      'data' => '',
+      'data' => array(),
       'name' => '',
       'created' => '',
     );
@@ -272,7 +272,7 @@ class RoomifyChannelMapTypeController extends EntityAPIControllerExportable {
     $values += array(
       'id' => '',
       'is_new' => TRUE,
-      'data' => '',
+      'data' => array(),
     );
 
     $channel_map_type = parent::create($values);

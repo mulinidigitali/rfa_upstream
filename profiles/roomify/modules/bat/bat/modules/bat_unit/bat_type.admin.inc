@@ -315,7 +315,7 @@ class BatTypeUIController extends EntityDefaultUIController {
 function bat_type_form($form, &$form_state, $type, $op = 'edit') {
   // Add the breadcrumb for the form's location.
   bat_type_set_breadcrumb();
-  drupal_set_title(t('Edit @type_name', array('@type_name' => $type->name)));
+  drupal_set_title(t('Edit !type_name', array('!type_name' => $type->name)));
 
   $type->date = format_date($type->created, 'custom', 'Y-m-d H:i:s O');
   $account = user_load($type->uid);
@@ -335,7 +335,7 @@ function bat_type_form($form, &$form_state, $type, $op = 'edit') {
 function bat_type_form_wrapper($type) {
   // Add the breadcrumb for the form's location.
   bat_type_set_breadcrumb();
-  drupal_set_title(t('Edit @type_name', array('@type_name' => $type->name)));
+  drupal_set_title(t('Edit !type_name', array('!type_name' => $type->name)));
 
   $type->date = format_date($type->created, 'custom', 'Y-m-d H:i:s O');
   $account = user_load($type->uid);
@@ -771,7 +771,7 @@ function bat_type_set_breadcrumb() {
     (drupal_valid_path('admin')) ? l(t('Administration'), 'admin') : '',
     (drupal_valid_path('admin/bat')) ? l(t('BAT'), 'admin/bat') : '',
     (drupal_valid_path('admin/bat/config')) ? l(t('Configuration'), 'admin/bat/config') : '',
-    (drupal_valid_path('admin/bat/config/type-types')) ? l(t('Types'), 'admin/bat/config/type-types') : '',
+    (drupal_valid_path('admin/bat/config/types')) ? l(t('Types'), 'admin/bat/config/types') : '',
   );
 
   drupal_set_breadcrumb(array_filter($breadcrumb));

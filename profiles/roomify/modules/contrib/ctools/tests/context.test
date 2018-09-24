@@ -1,12 +1,14 @@
 <?php
 
 /**
+ * @file
  * Test the keyword substitution functionality.
  */
+
 class CtoolsContextIDTestCase extends DrupalWebTestCase {
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   public static function getInfo() {
     return array(
@@ -18,7 +20,7 @@ class CtoolsContextIDTestCase extends DrupalWebTestCase {
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   protected function setUp(array $modules = array()) {
     $modules[] = 'ctools';
@@ -160,7 +162,7 @@ class CtoolsContextIDTestCase extends DrupalWebTestCase {
     $expected = 2;
     $this->assertEqual($value, $expected, 'Foo\'s objects have next id ' . $expected);
 
-    // Another expected case: there are multiple numeric IDs
+    // Another expected case: there are multiple numeric IDs.
     $value = ctools_context_next_id($test_objects, 'bar');
     $expected = 100;
     $this->assertEqual($value, $expected, 'Bar\'s objects have next id ' . $expected);
@@ -175,7 +177,7 @@ class CtoolsContextIDTestCase extends DrupalWebTestCase {
 class CtoolsContextKeywordsSubstitutionTestCase extends DrupalWebTestCase {
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   public static function getInfo() {
     return array(
@@ -187,7 +189,7 @@ class CtoolsContextKeywordsSubstitutionTestCase extends DrupalWebTestCase {
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   protected function setUp(array $modules = array()) {
     $modules[] = 'ctools';
@@ -327,6 +329,44 @@ class CtoolsContextKeywordsSubstitutionTestCase extends DrupalWebTestCase {
       $actual_result = ctools_context_keyword_substitute($string, $keywords, $contexts);
       $this->assertEqual($actual_result, $expected_result, $message);
     }
+  }
+
+}
+
+/**
+ * Test the context classes.
+ */
+class CtoolsContextUnitTestCase extends DrupalUnitTestCase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function getInfo() {
+    return array(
+      'name' => 'Context unit tests',
+      'description' => 'Verifies that context classes behave correctly',
+      'group' => 'ctools',
+      'dependencies' => array('ctools'),
+    );
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function setUp() {
+    parent::setUp();
+    require_once __DIR__ . '/../includes/context.inc';
+  }
+
+  /**
+   * Tests that contexts have the correct required property value.
+   */
+  public function testOptionalRequiredContext() {
+    $required_context = new ctools_context_required('test1');
+    $this->assertTrue($required_context->required);
+
+    $optional_context = new ctools_context_optional('test2');
+    $this->assertFalse($optional_context->required);
   }
 
 }
