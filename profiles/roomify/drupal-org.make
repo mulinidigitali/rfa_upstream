@@ -9,19 +9,19 @@ defaults[projects][subdir] = contrib
 projects[bat][type] = module
 projects[bat][download][type] = git
 projects[bat][download][url] = https://github.com/Roomify/bat_drupal.git
-projects[bat][download][tag] = 7.x-1.31
+projects[bat][download][tag] = 7.x-1.35
 projects[bat][subdir] = bat
 
 projects[bat_api][type] = module
 projects[bat_api][download][type] = git
 projects[bat_api][download][url] = https://github.com/Roomify/bat_api.git
-projects[bat_api][download][tag] = 7.x-2.8
+projects[bat_api][download][tag] = 7.x-2.9
 projects[bat_api][subdir] = bat
 
 projects[bat_event_state_constraints][type] = module
 projects[bat_event_state_constraints][download][type] = git
 projects[bat_event_state_constraints][download][url] = https://github.com/Roomify/bat_event_state_constraints.git
-projects[bat_event_state_constraints][download][tag] = 1.2
+projects[bat_event_state_constraints][download][tag] = 1.3
 projects[bat_event_state_constraints][subdir] = bat
 
 projects[roomify_rate][type] = module
@@ -34,14 +34,14 @@ projects[roomify_rate][subdir] = roomify
 projects[roomify_property][type] = module
 projects[roomify_property][download][type] = git
 projects[roomify_property][download][url] = https://github.com/Roomify/roomify_property.git
-projects[roomify_property][download][tag] = 1.30
+projects[roomify_property][download][tag] = 1.31
 projects[roomify_property][directory_name] = roomify_property
 projects[roomify_property][subdir] = roomify
 
 projects[roomify_channel_connector][type] = module
 projects[roomify_channel_connector][download][type] = git
 projects[roomify_channel_connector][download][url] = https://github.com/Roomify/roomify_channel_connector_drupal.git
-projects[roomify_channel_connector][download][tag] = 1.13
+projects[roomify_channel_connector][download][tag] = 1.14
 projects[roomify_channel_connector][directory_name] = roomify_channel_connector
 projects[roomify_channel_connector][subdir] = roomify
 
@@ -62,7 +62,7 @@ projects[better_db_updates][subdir] = contrib
 
 ; bootstrap
 projects[bootstrap][type] = theme
-projects[bootstrap][version] = 3.15
+projects[bootstrap][version] = 3.19
 
 ; adminimal
 projects[adminimal_theme][type] = theme
@@ -76,16 +76,15 @@ projects[adminimal_theme][patch][] = "https://www.drupal.org/files/issues/admini
 
 projects[addressfield][version] = 1.2
 
-projects[addtoany][version] = 4.14
+projects[addtoany][version] = 4.15
 
 projects[admin_menu][version] = 3.0-rc5
 
-projects[adminimal_admin_menu][version] = 1.7
-projects[adminimal_admin_menu][patch][] = https://www.drupal.org/files/issues/drupal_admin_undefined-2839894-4.patch
+projects[adminimal_admin_menu][version] = 1.9
 
 projects[administerusersbyrole][version] = 2.0
 
-projects[advagg][version] = 2.28
+projects[advagg][version] = 2.33
 
 projects[agrcache][version] = 1.7
 
@@ -95,7 +94,7 @@ projects[autocomplete_deluxe][patch][] = https://www.drupal.org/files/issues/ter
 
 projects[background_image_formatter][version] = 1.4
 
-projects[backup_migrate][version] = 3.2
+projects[backup_migrate][version] = 3.5
 
 projects[bean][version] = 1.9
 
@@ -107,8 +106,7 @@ projects[better_formats][version] = 1.0-beta2
 projects[cer][type] = module
 projects[cer][download][type] = git
 projects[cer][download][url] = https://git.drupal.org/project/cer.git
-projects[cer][download][revision] = 68f4b2043ab1b200da4e21d506924d7cd332b67f
-projects[cer][patch][] = https://www.drupal.org/files/issues/cer-cer-field-collection-issues-2352783-3.patch
+projects[cer][download][revision] = 886048a494a3d3c8fea79564b3a01e00ebed6754
 
 projects[chain_menu_access][version] = 2.0
 
@@ -122,10 +120,8 @@ projects[classy_paragraphs][version] = 1.0
 
 projects[colorbox] = 2.13
 
-projects[commerce][version] = 1.13
+projects[commerce][version] = 1.14
 projects[commerce][patch][] = https://www.drupal.org/files/issues/commerce-delete_line_items_without_products-2261289-4.patch
-projects[commerce][patch][] = https://www.drupal.org/files/issues/commerce-georgian_lari-2256853-6.patch
-projects[commerce][patch][] = https://www.drupal.org/files/issues/commerce-cart_product_add_php7-2762907-5.patch
 
 projects[commerce_addressbook] = 3.0-rc4
 
@@ -162,12 +158,9 @@ projects[conditional_fields][version] = 3.0-alpha2
 
 projects[content_menu][version] = 1.0
 
-projects[ctools][type] = module
-projects[ctools][download][type] = git
-projects[ctools][download][url] = https://git.drupal.org/project/ctools.git
-projects[ctools][download][revision] = 166eac2a2fe6dd678178a96845815526147a736f
+projects[ctools][version] = 1.14
 
-projects[date][version] = 2.10
+projects[date][version] = 2.x-dev
 projects[date][patch][] = https://www.drupal.org/files/issues/date-input_disabled-1190830-14.patch
 
 projects[date_restrictions][type] = module
@@ -180,27 +173,27 @@ projects[date_datepicker_inline][download][type] = git
 projects[date_datepicker_inline][download][url] = https://git.drupal.org/project/date_datepicker_inline.git
 projects[date_datepicker_inline][download][revision] = c6aa61c6c8247fca72dece2b4bbee13400ee15e6
 
-projects[devel][version] = 1.5
+projects[devel][version] = 1.6
 
 projects[diff][version] = 3.3
 
 projects[dragdropfile][version] = 1.7
 
-projects[elements][version] = 1.4
+projects[elements][version] = 1.5
 
 projects[email][version] = 1.3
 
-projects[entity][version] = 1.8
+projects[entity][version] = 1.9
 
 projects[entitycache][version] = 1.5
 
 projects[entity_background][version] = 1.0-alpha6
 
-projects[entityqueue][version] = 1.1
+projects[entityqueue][version] = 1.5
 
 projects[entity_rules][version] = 1.0-alpha4
 
-projects[entity_translation][version] = 1.0-beta7
+projects[entity_translation][version] = 1.0
 
 projects[entity2text][version] = 1.0-alpha3
 
@@ -237,10 +230,7 @@ projects[ffc][version] = 1.0-beta2
 
 projects[field_collection][version] = 1.0-beta12
 
-projects[field_group][type] = module
-projects[field_group][download][type] = git
-projects[field_group][download][url] = https://git.drupal.org/project/field_group.git
-projects[field_group][download][revision] = 0a5404d623d0bec355d81a9646f2b7de93b958e4
+projects[field_group][version] = 1.6
 
 projects[flag][version] = 3.9
 
@@ -255,19 +245,14 @@ projects[field_formatter_settings][version] = 1.1
 projects[footable][version] = 1.0
 projects[footable][patch][] = https://www.drupal.org/files/issues/footable-add_striping_option-2307701-4.patch
 
-projects[file_entity][version] = 2.10
+projects[file_entity][version] = 2.22
 
 projects[geofield][version] = 2.3
 
-projects[geofield_gmap][type] = module
-projects[geofield_gmap][download][type] = git
-projects[geofield_gmap][download][url] = https://git.drupal.org/project/geofield_gmap.git
-projects[geofield_gmap][download][revision] = b09bbfa9ff2020b7ccd64b69a563b858618a92f1
-projects[geofield_gmap][patch][] = https://www.drupal.org/files/issues/fix-api-key-not-being-used-2746209-16.patch
-projects[geofield_gmap][patch][] = https://www.drupal.org/files/issues/geofield_gmap-zoom_after_selecting_address-2562835-1.patch
-projects[geofield_gmap][patch][] = https://www.drupal.org/files/issues/geofield_gmap-allow_html_tags_description-2847341-1.patch
+projects[geofield_gmap][version] = 2.0-alpha1
+projects[geofield_gmap][patch][] = https://www.drupal.org/files/issues/2018-03-21/geofield_gmap-zoom_after_selecting_address-2562835-4.patch
 
-projects[geolocation][version] = 1.6
+projects[geolocation][version] = 1.7
 
 projects[geophp][version] = 1.7
 
@@ -322,7 +307,7 @@ projects[less][version] = 4.0
 
 projects[libraries][version] = 2.3
 
-projects[link][version] = 1.4
+projects[link][version] = 1.5
 
 projects[jsonlog][version] = 2.1
 
@@ -337,13 +322,15 @@ projects[mailsystem][download][type] = git
 projects[mailsystem][download][url] = https://git.drupal.org/project/mailsystem.git
 projects[mailsystem][download][revision] = 966e13e7024a428e35dfc1e505ae6a774eb148a2
 
-projects[manualcrop][version] = 1.6
+projects[manualcrop][version] = 1.7
 
 projects[masonry][version] = 3.0-beta1
 
 projects[masonry_views][version] = 3.0
 
-projects[media][version] = 2.12
+projects[media][version] = 2.19
+
+projects[media_colorbox][version] = 1.0-rc4
 
 projects[menu_admin_per_menu][version] = 1.0
 projects[menu_admin_per_menu][patch][] = https://www.drupal.org/files/issues/integrate-menu-translation-suport-2546214-1.patch
@@ -353,7 +340,7 @@ projects[menu_token][version] = 1.0-beta7
 projects[message][version] = 1.12
 projects[message][patch][] = https://www.drupal.org/files/issues/text-sanitized.patch
 
-projects[metatag][version] = 1.22
+projects[metatag][version] = 1.25
 
 projects[mimemail][version] = 1.0
 
@@ -378,6 +365,7 @@ projects[panels_tabs][download][revision] = 2caec501daab91001712d153398df585ff6c
 projects[panels_tabs][patch][] = https://www.drupal.org/files/issues/panels_tabs-back_button_support-821334-18.patch
 
 projects[paragraphs][version] = 1.0-rc5
+projects[paragraphs][patch][] = https://www.drupal.org/files/issues/paragraphs-ajax.2680101.1.patch
 projects[paragraphs][patch][] = https://www.drupal.org/files/issues/paragraphs-entity_translation-2452675-140.patch
 
 projects[paragraphs_id][version] = 1.0-alpha2
@@ -403,7 +391,10 @@ projects[plupload][patch][] = https://www.drupal.org/files/plupload-cannot-uploa
 
 projects[pm_existing_pages][version] = 1.4
 
-projects[popup_field_group][version] = 1.0
+projects[popup_field_group][version] = 1.1
+
+projects[popup_message][version] = 1.2
+projects[popup_message][patch][] = https://www.drupal.org/files/issues/popup_message-title-not-required-1854924-3.patch
 
 projects[profile2][type] = module
 projects[profile2][download][type] = git
@@ -420,7 +411,7 @@ projects[references_dialog][patch][] = https://www.drupal.org/files/issues/refer
 projects[references_dialog][patch][] = https://www.drupal.org/files/issues/references_dialog-create_users-2172321.patch
 projects[references_dialog][patch][] = https://www.drupal.org/files/issues/creating_user_but-2238801-6.patch
 
-projects[relation][version] = 1.1
+projects[relation][version] = 1.2
 
 projects[robotstxt][version] = 1.3
 
@@ -431,7 +422,7 @@ projects[role_export][download][type] = git
 projects[role_export][download][url] = https://git.drupal.org/project/role_export.git
 projects[role_export][download][revision] = 0aef061b79a1dd0a949d504a238bf8b3f9f41b1b
 
-projects[rules][version] = 2.10
+projects[rules][version] = 2.11
 
 projects[rules_conditional][version] = 1.0-beta2
 
@@ -442,7 +433,7 @@ projects[rrssb][download][revision] = 969397d5331003aa33869b53bd4ac94814f99852
 
 projects[s3fs][version] = 2.4
 
-projects[search_api][version] = 1.22
+projects[search_api][version] = 1.24
 
 projects[search_api_db][version] = 1.6
 projects[search_api_db][patch][] = https://www.drupal.org/files/issues/2219897-25--facets_for_empty_results.patch
@@ -482,7 +473,7 @@ projects[subuser][version] = 2.0-alpha4
 
 projects[table_element][version] = 1.0-beta4
 
-projects[taxonomy_access_fix][version] = 2.3
+projects[taxonomy_access_fix][version] = 2.4
 
 projects[timefield][version] = 1.0-alpha2
 
@@ -492,7 +483,7 @@ projects[token][version] = 1.7
 
 projects[userone][version] = 1.0-beta1
 
-projects[uuid][version] = 1.0
+projects[uuid][version] = 1.2
 
 projects[variable][version] = 2.5
 
@@ -502,7 +493,7 @@ projects[video_embed_field][version] = 2.0-beta11
 
 projects[view_unpublished][version] = 1.2
 
-projects[views][version] = 3.18
+projects[views][version] = 3.20
 
 projects[views_autocomplete_filters][type] = module
 projects[views_autocomplete_filters][download][type] = git
@@ -527,18 +518,17 @@ projects[views_infinite_scroll][version] = 2.1
 
 projects[views_load_more][version] = 1.5
 
-projects[views_bulk_operations][version] = 3.4
+projects[views_bulk_operations][version] = 3.5
 
 projects[views_megarow][version] = 1.7
 
 projects[views_php][version] = 1.0-alpha3
 
-projects[votingapi][version] = 2.12
-projects[votingapi][patch][] = https://www.drupal.org/files/issues/updating_voting_api_default_views-2679585-3.patch
+projects[votingapi][version] = 2.15
 
 projects[vvf][version] = 1.2
 
-projects[wysiwyg][version] = 2.4
+projects[wysiwyg][version] = 2.5
 
 projects[xautoload][version] = 5.7
 
@@ -586,7 +576,7 @@ libraries[ckeditor][directory_name] = ckeditor
 libraries[ckeditor][type] = library
 libraries[ckeditor][destination] = libraries
 libraries[ckeditor][download][type] = get
-libraries[ckeditor][download][url] = https://ckeditor.com/cke4/online-builder/releases/minified/4.7.3/icy_orange/0.9/ckeditor_4.7.3_dc56a7d8be5f.zip
+libraries[ckeditor][download][url] = https://ckeditor.com/cke4/online-builder/releases/minified/4.9.2/icy_orange/0.9/ckeditor_4.9.2_c3cb8f2a46d0.zip
 
 ; colorbox
 libraries[colorbox][directory_name] = colorbox
@@ -676,14 +666,14 @@ libraries[fullcalendar][directory_name] = fullcalendar
 libraries[fullcalendar][type] = library
 libraries[fullcalendar][destination] = libraries
 libraries[fullcalendar][download][type] = get
-libraries[fullcalendar][download][url] = https://github.com/arshaw/fullcalendar/releases/download/v3.6.2/fullcalendar-3.6.2.zip
+libraries[fullcalendar][download][url] = https://github.com/arshaw/fullcalendar/releases/download/v3.9.0/fullcalendar-3.9.0.zip
 
 ; scheduler
 libraries[scheduler][directory_name] = fullcalendar-scheduler
 libraries[scheduler][type] = library
 libraries[scheduler][destination] = libraries
 libraries[scheduler][download][type] = get
-libraries[scheduler][download][url] = https://github.com/fullcalendar/fullcalendar-scheduler/releases/download/v1.8.1/fullcalendar-scheduler-1.8.1.zip
+libraries[scheduler][download][url] = https://github.com/fullcalendar/fullcalendar-scheduler/releases/download/v1.9.4/fullcalendar-scheduler-1.9.4.zip
 
 ; stripe-php
 libraries[stripe-php][download][type] = file
